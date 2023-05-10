@@ -1,0 +1,23 @@
+<h1>Tasks</h1>
+
+<h3>Add Task</h3>
+<input type="text" id="addTaskDescription" placeholder="Describe the task">
+<button id="addTask">Add Task</button>
+
+<h3>Task list</h3>
+<ul>
+	{{#each results}}
+	<li data-tdid="{{todoItemId}}" {{#if isComplete}} class="complete" {{else}} class="incomplete" {{/if}}>
+
+		<button class="deleteItem">Delete</button>
+
+		{{#if isComplete}}
+		<input class="isComplete" type="checkbox" checked>
+		{{else}}
+		<input class="isComplete" type="checkbox">
+		{{/if}}
+		<span class="task"> {{{task}}}</span>
+	</li>
+	{{/each}}
+
+</ul>
